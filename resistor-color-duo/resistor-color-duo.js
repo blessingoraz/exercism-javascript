@@ -3,14 +3,10 @@
 // convenience to get you started writing code faster.
 //
 
-const COLORS = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white'];
-export const value = (colors) => {
-  if(colors.length > 2) {
-    colors.pop();
-   }
+import { colorCode } from '../resistor-color/resistor-color';
+
+export const value = ([color1, color2]) => {
    let colorNumber = '';
-   for (let i = 0; i < colors.length; i++) {
-     colorNumber += COLORS.indexOf(colors[i]).toString();
-   }
+   colorNumber = '' + colorCode(color1) + colorCode(color2);
    return parseInt(colorNumber);
 };
